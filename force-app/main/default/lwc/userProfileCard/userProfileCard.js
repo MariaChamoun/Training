@@ -1,4 +1,4 @@
-import { LightningElement } from 'lwc';
+import { LightningElement , track} from 'lwc';
 
 export default class UserProfileCard extends LightningElement {
     user1 ={
@@ -13,12 +13,22 @@ export default class UserProfileCard extends LightningElement {
         email: 'User2Email',
         status: 'Online'
     }
-    currentUser={... this.user1};
+    get statusClass() {
+        return this.currentUser.status === 'Online' ? 'status-button online' : 'status-button offline';
+    }
+    @track currentUser={... this.user1};
     switchusers(){
         this.currentUser = this.currentUser.name === this.user1.name ? {...this.user2} : {...this.user1};
     }
     userstatus(){
-        
-        
+         this.currentUser = {
+            ...this.currentUser,
+            status: this.currentUser.status === 'Online' ? 'Offline' : 'Online'
+        };
+         if (this.currentUser.name === this.user1.name) {
+            this.user1 = { ...this.currentUser };
+        } else {
+            this.user2 = { ...this.currentUser };
+        }
     }
 }

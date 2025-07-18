@@ -1,0 +1,17 @@
+<template>
+    <template if:true={opportunities}>
+        <lightning-card title="Related Opportunities">
+            <lightning-datatable
+            key-field="Id"
+            data={opportunities}
+            columns={columns}
+            hide-checkbox-column
+            sorted-by="Amount"
+            sorted-direction="desc">
+        </lightning-datatable>
+    </lightning-card>
+</template>
+<template if:true={error}>
+    <c-error-panel errors={error}></c-error-panel>
+</template>
+</template>
