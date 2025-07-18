@@ -1,0 +1,13 @@
+.custom-box {
+    background-color: grey;
+}
+.display-box {
+    min-height: 3rem;
+    background-color: #f4f6f9;
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    font-family: monospace;
+    font-size: 1.25rem;
+    word-wrap: break-word;
+}

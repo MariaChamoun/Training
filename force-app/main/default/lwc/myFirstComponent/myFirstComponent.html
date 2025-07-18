@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Component" icon-name="doctype:gform">
+        <div class="slds-align_absolute-center" style="height:5rem">
+            <h1> Promo Component </h1>
+        </div>
+        <lightning-button label="Click Me" variant="brand" onclick={handleClick}> </lightning-button>
+        <p> This is x: {x}</p>
+         <c-child-first-component message = {messageparent}> </c-child-first-component>
+    </lightning-card>
+</template>
